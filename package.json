@@ -1,0 +1,22 @@
+{
+  "name": "constant-contact",
+  "version": "0.0.1",
+  "description": "Constant Contact API client",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbanman/node-constant-contact.git"
+  },
+  "author": {
+    "name": "Kelly Banman",
+    "email": "kelly.banman@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.34.0",
+    "querystring": "^0.2.0",
+    "bluebird": "^1.0.7",
+    "sprintf-js": "0.0.7",
+    "lodash": "^2.4.1"
+  }
+}
