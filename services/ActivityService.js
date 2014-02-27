@@ -37,7 +37,7 @@ ActivityService.prototype.getActivities = function(accessToken, params) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			resove(body.map(Activity.create));
@@ -59,7 +59,7 @@ ActivityService.prototype.getActivity = function(accessToken, activityId) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			resolve(Activity.create(body));
@@ -82,7 +82,7 @@ ActivityService.prototype.createAddContactsActivity = function(accessToken, addC
 		form: addContacts.toJson()
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);
@@ -132,7 +132,7 @@ ActivityService.prototype.createAddContactsActivityFromFile = function(accessTok
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);
@@ -158,7 +158,7 @@ ActivityService.prototype.addClearListsActivity = function(accessToken, lists) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);
@@ -182,7 +182,7 @@ ActivityService.prototype.addExportContactsActivity = function(accessToken, expo
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);
@@ -212,7 +212,7 @@ ActivityService.prototype.addRemoveContactsFromListsActivity = function(accessTo
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);
@@ -262,7 +262,7 @@ ActivityService.prototype.addRemoveContactsFromListsActivityFromFile = function(
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			activity = Activity.create(body);

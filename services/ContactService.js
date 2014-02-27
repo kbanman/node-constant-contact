@@ -56,7 +56,7 @@ ContactService.prototype.getContact = function(accessToken, contactId) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -81,7 +81,7 @@ ContactService.prototype.addContact = function(accessToken, contact, params) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -104,7 +104,7 @@ ContactService.prototype.deleteContact = function(accessToken, contactId) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.del(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 204) return reject(body);
@@ -127,7 +127,7 @@ ContactService.prototype.deleteContactFromLists = function(accessToken, contactI
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.del(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 204) return reject(body);
@@ -151,7 +151,7 @@ ContactService.prototype.deleteContactFromList = function(accessToken, contactId
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.del(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 204) return reject(body);
@@ -176,7 +176,7 @@ ContactService.prototype.updateContact = function(accessToken, contact, params) 
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.put(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);

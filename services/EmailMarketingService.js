@@ -33,7 +33,7 @@ EmailMarketingService.prototype.addCampaign = function(accessToken, campaign) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -56,7 +56,7 @@ EmailMarketingService.prototype.getCampaigns = function(accessToken, params) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -80,7 +80,7 @@ EmailMarketingService.prototype.getCampaign = function(accessToken, campaignId) 
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -103,7 +103,7 @@ EmailMarketingService.prototype.deleteCampaign = function(accessToken, campaignI
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.del(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 204) return reject(body);
@@ -127,7 +127,7 @@ EmailMarketingService.prototype.updateCampaign = function(accessToken, campaign)
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.put(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);

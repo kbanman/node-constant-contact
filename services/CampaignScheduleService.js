@@ -35,7 +35,7 @@ CampaignScheduleService.prototype.addSchedule = function(accessToken, campaignId
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			resolve(Schedule.create(body));
@@ -57,7 +57,7 @@ CampaignScheduleService.prototype.getSchedules = function(accessToken, campaignI
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -81,7 +81,7 @@ CampaignScheduleService.prototype.getSchedule = function(accessToken, campaignId
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -106,7 +106,7 @@ CampaignScheduleService.prototype.updateSchedule = function(accessToken, campaig
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -129,7 +129,7 @@ CampaignScheduleService.prototype.deleteSchedule = function(accessToken, campaig
 		headers: this.getHeaders(accessToken)
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.del(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 204) return reject(body);
@@ -153,7 +153,7 @@ CampaignScheduleService.prototype.sendTest = function(accessToken, campaignId, t
 		body: test_send.toJson()
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			resolve(TestSend.create(body));

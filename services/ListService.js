@@ -33,7 +33,7 @@ ListService.prototype.getLists = function(accessToken, params, callback) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -57,7 +57,7 @@ ListService.prototype.addList = function(accessToken, list, callback) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.post(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -81,7 +81,7 @@ ListService.prototype.updateList = function(accessToken, list, callback) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.put(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -104,7 +104,7 @@ ListService.prototype.getList = function(accessToken, listId, callback) {
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);
@@ -128,7 +128,7 @@ ListService.prototype.getContactsFromList = function(accessToken, listId, params
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);

@@ -39,7 +39,7 @@ ContactTrackingService.prototype.getBounces = function(accessToken, contactId, p
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -64,7 +64,7 @@ ContactTrackingService.prototype.getClicks = function(accessToken, contactId, pa
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -89,7 +89,7 @@ ContactTrackingService.prototype.getForwards = function(accessToken, contactId, 
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -114,7 +114,7 @@ ContactTrackingService.prototype.getOpens = function(accessToken, contactId, par
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -140,7 +140,7 @@ ContactTrackingService.prototype.getSends = function(accessToken, contactId, par
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -165,7 +165,7 @@ ContactTrackingService.prototype.getUnsubscribes = function(accessToken, contact
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -189,7 +189,7 @@ ContactTrackingService.prototype.getSummary = function(accessToken, contactId, c
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);

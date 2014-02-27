@@ -39,7 +39,7 @@ CampaignTrackingService.prototype.getBounces = function(accessToken, campaignId,
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -64,7 +64,7 @@ CampaignTrackingService.prototype.getClicks = function(accessToken, campaignId, 
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -89,7 +89,7 @@ CampaignTrackingService.prototype.getForwards = function(accessToken, campaignId
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -114,7 +114,7 @@ CampaignTrackingService.prototype.getOpens = function(accessToken, campaignId, p
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -139,7 +139,7 @@ CampaignTrackingService.prototype.getSends = function(accessToken, campaignId, p
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -164,7 +164,7 @@ CampaignTrackingService.prototype.getUnsubscribes = function(accessToken, campai
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body[0]);
@@ -188,7 +188,7 @@ CampaignTrackingService.prototype.getSummary = function(accessToken, campaignId)
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			if (r.statusCode != 200) return reject(body);

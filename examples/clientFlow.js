@@ -16,7 +16,7 @@ function ask(question) {
 		input: process.stdin,
 		output: process.stdout
 	});
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		r.question(question, function(answer) {
 			r.close();
 			resolve(answer);

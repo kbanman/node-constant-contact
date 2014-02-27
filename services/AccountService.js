@@ -30,7 +30,7 @@ AccountService.prototype.getVerifiedEmailAddresses = function(accessToken, param
 		json: true
 	};
 
-	return new Promise(function(resolve) {
+	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
 			resolve(body.map(VerifiedEmailAddress.create));
