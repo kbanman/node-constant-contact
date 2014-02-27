@@ -32,8 +32,6 @@ ContactService.prototype.getContacts = function(accessToken, params) {
 		json: true
 	};
 
-	console.log('req', req);
-
 	return new Promise(function(resolve, reject) {
 		Request.get(req, function(e, r, body) {
 			if (e) return reject(e);
