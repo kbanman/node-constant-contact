@@ -2,6 +2,7 @@
 var _ = require('lodash');
 var Request = require('request');
 var Promise = require('bluebird');
+var sprintf = require("sprintf-js").sprintf;
 
 var Config = require('../config.js'),
 	BaseService = require('./BaseService.js'),
